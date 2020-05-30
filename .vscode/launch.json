@@ -1,0 +1,34 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "ch: MockServer",
+			"type": "chrome",
+			"request": "launch",
+			"url": "http://localhost:55555/test/flpSandboxMockServer.html",
+			"webRoot": "${workspaceFolder}/webapp",
+			"skipFiles": [
+				"/resources/**/*.js",
+				"<node_internals>/**/*.js"
+			]
+		},
+		{
+			"name": "ff: MockServer",
+			"type": "firefox",
+			"request": "launch",
+			"reAttach": true,
+			"url": "http://localhost:55555/test/flpSandboxMockServer.html",
+			"webRoot": "${workspaceFolder}/webapp",
+			"pathMappings": [
+				{
+					"url": "http://localhost:55555/resources",
+					"path": "${workspaceFolder}/../ui5/<version>/resources"
+				},
+				{
+					"url": "http://localhost:55555",
+					"path": "${workspaceFolder}/webapp"
+				}
+			]
+		}
+	]
+}

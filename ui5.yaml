@@ -1,0 +1,56 @@
+specVersion: '2.1'
+metadata:
+  name: <app-name>
+type: application
+server:
+  settings:
+    httpPort: 55555
+    httpsPort: 66666
+  customMiddleware:
+    - name: ui5-middleware-livereload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+    - name: ui5-middleware-servestatic
+      afterMiddleware: compression
+      mountPath: /resources
+      configuration:
+        rootPath: "../ui5/<version>/resources"
+    - name: ui5-middleware-simpleproxy
+      afterMiddleware: compression
+      mountPath: /sap/opu/odata
+      configuration:
+        baseUri: "http(s)://<host>:<port>/sap/opu/odata"
+builder:
+  resources:
+    excludes:
+      - "test/**"
+      - "test.html"
+      - "localService/**"
+  customTasks:
+    - name: ui5-task-i18ncheck
+      afterTask: replaceVersion
+      configuration:
+        debug: true
+    - name: webide-extension-task-updateNeoApp
+      afterTask: generateVersionInfo
+      configuration:
+        destDir: dist
+        appFolder: webapp
+        nameSpace: <namespace/for/app>
+    - name: webide-extension-task-updateManifestJson
+      afterTask: webide-extension-task-updateNeoApp
+      configuration:
+        appFolder: webapp
+        destDir: dist
+    - name: webide-extension-task-lint
+      afterTask: webide-extension-task-updateManifestJson
+      configuration:
+        destDir: dist
+        appFolder: webapp
+        nameSpace: <namespace/for/app>
+    - name: webide-extension-task-resources
+      afterTask: webide-extension-task-lint
+      configuration:
+        nameSpace: <namespace/for/app>

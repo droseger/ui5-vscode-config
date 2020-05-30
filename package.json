@@ -1,0 +1,33 @@
+{
+	"name": "<app-name>",
+	"private": true,
+	"version": "",
+	"author": "",
+	"description": "",
+	"scripts": {
+		"start": "ui5 serve -o test.html",
+		"serve": "ui5 serve",
+		"build": "ui5 build --clean-dest --include-task=generateManifestBundle generateCachebusterInfo",
+		"lint": "eslint webapp --rulesdir 'node_modules/@sap/di.code-validation.js/src/defaultConfig/fioriCustomRules/.eslintrules'",
+		"lint-fix": "eslint --fix webapp --rulesdir 'node_modules/@sap/di.code-validation.js/src/defaultConfig/fioriCustomRules/.eslintrules'"
+	},
+	"devDependencies": {
+		"@ui5/cli": "^2.2.6",
+		"ui5-middleware-livereload": "^0.3.0",
+		"ui5-middleware-servestatic": "^0.3.0",
+		"ui5-middleware-simpleproxy": "^0.3.0",
+		"ui5-task-i18ncheck": "^0.3.0",
+		"@sap/ui5-builder-webide-extension": "1.0.9",
+		"eslint": "^7.1.0"
+	},
+	"ui5": {
+		"dependencies": [
+			"ui5-middleware-livereload",
+			"ui5-middleware-servestatic",
+			"ui5-middleware-simpleproxy",
+			"ui5-task-i18ncheck",
+			"@sap/ui5-builder-webide-extension"
+		]
+	},
+	"dependencies": {}
+}
