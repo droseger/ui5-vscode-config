@@ -1,11 +1,14 @@
 {
 	"recommendations": [
-		"saposs.xml-toolkit",
 		"dbaeumer.vscode-eslint",
 		"msjsdiag.debugger-for-chrome",
 		"firefox-devtools.vscode-firefox-debug",
 		"donjayamanne.githistory",
-		"editorconfig.editorconfig"
+		"editorconfig.editorconfig",
+		"sapse.vscode-ui5-language-assistant",
+		"saposs.xml-toolkit",
+		"mikeburgh.xml-format",
+		"leo-ls.fiori-xml-lint"
 	],
 	"unwantedRecommendations": []
 }

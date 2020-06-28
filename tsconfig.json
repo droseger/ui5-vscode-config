@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"module": "none",
+		"noEmit": true,
+		"allowJs": true,
+		"types": [
+			"@sapui5/ts-types"
+		]
+	}
+}

@@ -458,12 +458,6 @@
 		"template-curly-spacing": 0,
 		"unicode-bom": 0,
 		"use-isnan": 2,
-		"valid-jsdoc": [
-			1,
-			{
-				"requireReturn": false
-			}
-		],
 		"valid-typeof": 2,
 		"vars-on-top": 0,
 		"wrap-iife": [

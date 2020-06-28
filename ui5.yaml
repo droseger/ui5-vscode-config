@@ -1,4 +1,4 @@
-specVersion: '2.1'
+specVersion: "2.1"
 metadata:
   name: <app-name>
 type: application
@@ -13,7 +13,7 @@ server:
         debug: true
         extraExts: "xml,json,properties"
         port: 35729
-        watchPath: "webapp"
+        watchPath: webapp
     - name: ui5-middleware-servestatic
       afterMiddleware: compression
       mountPath: /resources

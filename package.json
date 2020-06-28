@@ -12,21 +12,24 @@
 		"lint-fix": "eslint --fix webapp --rulesdir 'node_modules/@sap/di.code-validation.js/src/defaultConfig/fioriCustomRules/.eslintrules'"
 	},
 	"devDependencies": {
+		"@sap/ui5-builder-webide-extension": "^1.0.11",
+		"@sapui5/generator-sapui5-templates": "^1.71.6",
+		"@sapui5/ts-types": "^1.71.15",
 		"@ui5/cli": "^2.2.6",
+		"eslint": "^7.3.1",
 		"ui5-middleware-livereload": "^0.3.0",
 		"ui5-middleware-servestatic": "^0.3.0",
-		"ui5-middleware-simpleproxy": "^0.3.0",
+		"ui5-middleware-simpleproxy": "^0.3.1",
 		"ui5-task-i18ncheck": "^0.3.0",
-		"@sap/ui5-builder-webide-extension": "1.0.9",
-		"eslint": "^7.1.0"
+		"yo": "^3.1.1"
 	},
 	"ui5": {
 		"dependencies": [
+			"@sap/ui5-builder-webide-extension",
 			"ui5-middleware-livereload",
 			"ui5-middleware-servestatic",
 			"ui5-middleware-simpleproxy",
-			"ui5-task-i18ncheck",
-			"@sap/ui5-builder-webide-extension"
+			"ui5-task-i18ncheck"
 		]
 	},
 	"dependencies": {}
